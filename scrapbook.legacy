@@ -1,0 +1,27 @@
+"github.com/veandco/go-sdl2/sdl"
+w, r, e := sdl.CreateWindowAndRenderer(320, 480, 0)
+for event = sdl.PollEvent(); event != nil; event = sdl.PollEvent()
+f32.RenderUTF8_Blended
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----
