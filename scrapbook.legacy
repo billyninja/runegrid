@@ -2,6 +2,12 @@
 w, r, e := sdl.CreateWindowAndRenderer(320, 480, 0)
 for event = sdl.PollEvent(); event != nil; event = sdl.PollEvent()
 f32.RenderUTF8_Blended
+const (
+    RUNE_A string = "ᚠ"
+    RUNE_B        = "ᚨ"
+    RUNE_C        = "ᚰ"
+    RUNE_D        = "ᚸ"
+)
 
 
 
