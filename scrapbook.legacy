@@ -17,15 +17,14 @@ TODO
         Which curve? sin/cos/tan etc.
     Color Transition
         From Orange to Blue. Which curve?
-
-
-
-
-
-
-
-
-
-
-
+Select for Development - Day 002
+    GridGfx
+        RootPos
+        Size
+        Spacing    
+    DrawRects()
+    ---
+    RuneResource
+    RuneInstance
+    ColorAnimation
 ---
