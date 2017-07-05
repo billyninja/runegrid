@@ -1,9 +1,17 @@
 "github.com/veandco/go-sdl2/sdl"
-w, r, e := sdl.CreateWindowAndRenderer(320, 480, 0)
-for event = sdl.PollEvent(); event != nil; event = sdl.PollEvent()
-f32.RenderUTF8_Blended
+for event = sdl.PollEvent(); event != nil; event = sdl.PollEvent(){}
 
 Runes: "ᚠ" "ᚨ" "ᚰ" "ᚸ"
+
+Select for Development - Day 003
+    Grid + Runes + Arrow Movements
+
+Select for Development - Day 004
+    Runes + Animation
+
+Grid[px][py].Active = False
+CurrentPosition: 0,0 -> 1,0 -> 2,0 -> 3,0 -> 0, 0
+Grid[px][py].Active = True
 
 TODO
     Create Window
@@ -17,14 +25,14 @@ TODO
         Which curve? sin/cos/tan etc.
     Color Transition
         From Orange to Blue. Which curve?
-Select for Development - Day 002
-    GridGfx
-        RootPos
-        Size
-        Spacing    
-    DrawRects()
-    ---
-    RuneResource
-    RuneInstance
-    ColorAnimation
+
+
+
+
+
+
+
+
+
+
 ---
