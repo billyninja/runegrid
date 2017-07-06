@@ -10,6 +10,8 @@ For stater I'll just do some technical-tasks (rendering, input-handling, animati
 
 ## Journal
 
+- [Day 001 - Rune Rendering](https://github.com/billyninja/runegrid/tree/0ec98d9ebabddf7ca4d673621c8f02c3d71a6475)
+
 - [Day 002 - Grid + Runes Rendering](https://github.com/billyninja/runegrid/tree/656649400749137013f12e189cfe94b6bfe92c0f)
 
 - [Day 002.5 - Experimenting w/ Animation](https://github.com/billyninja/runegrid/tree/6925d74dba0f2c62634ff05a90ea74bc771a6dfd)
