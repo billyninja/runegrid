@@ -27,6 +27,8 @@ const (
     RUNA_D        = "ᚸ"
 )
 
+type FxCurve func(*Fx) float64
+
 type Vector2d struct {
     X int32
     Y int32
@@ -38,19 +40,19 @@ type Fx struct {
     Current  float64
     Duration time.Duration
     Elapsed  time.Duration
+    Func     FxCurve
+}
+
+func Ease(f *Fx) float64 {
+    x := float64(f.Elapsed) / float64(f.Duration)
+    y := (math.Pow((math.Sin(math.Pi * x / 2)), 2))
+
+    return f.Min + (y * (f.Max - f.Min))
 }
 
 func (f *Fx) Tick() {
     f.Elapsed += FRAME_LATENCY
-
-    RElp := float64(f.Elapsed) / float64(f.Duration)
-    RPg := f.Current / f.Max
-
-    stride := math.Cos(RElp)
-    dl := (stride * (f.Max - f.Min)) / (f.Duration.Seconds() * FRAME_LATENCY_MS)
-    f.Current += dl
-
-    fmt.Printf("s:%.2f - d:%.2f - el:%.2f - %.2f \n", stride, dl, RElp, RPg)
+    f.Current = f.Func(f)
 
     if f.Current >= f.Max || f.Elapsed >= f.Duration {
         f.Elapsed = 0
@@ -135,19 +137,20 @@ func (g *Grid) BuildRects() {
                 Holding: &RuneInstance{
                     CurrScale: &sdl.Rect{x, y, g.Size, g.Size},
                     Resource:  RUNES[i],
-                    Rotation:  InstFx(0, 360, time.Second*10, true),
+                    Rotation:  InstFx(-89, 360, time.Second*5, Ease, true),
                 },
             }
         }
     }
 }
 
-func InstFx(min, max float64, d time.Duration, loop bool) *Fx {
+func InstFx(min, max float64, d time.Duration, fn FxCurve, loop bool) *Fx {
     return &Fx{
         Min:      min,
-        Max:      max,
         Current:  min,
+        Max:      max,
         Duration: d,
+        Func:     fn,
     }
 }
 

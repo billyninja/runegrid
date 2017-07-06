@@ -3,11 +3,8 @@ for event = sdl.PollEvent(); event != nil; event = sdl.PollEvent(){}
 
 Runes: "ᚠ" "ᚨ" "ᚰ" "ᚸ"
 
-Select for Development - Day 003
-    Grid + Runes + Arrow Movements
-
-Select for Development - Day 004
-    Runes + Animation
+    RElp := float64(f.Elapsed) / float64(f.Duration)
+    return (math.Pow((math.Sin(math.Pi*RElp/2)), 2) * (f.Max - f.Min)) / (f.Duration.Seconds() * FRAME_LATENCY_MS)
 
 Grid[px][py].Active = False
 CurrentPosition: 0,0 -> 1,0 -> 2,0 -> 3,0 -> 0, 0
