@@ -1,35 +1,24 @@
 "github.com/veandco/go-sdl2/sdl"
-for event = sdl.PollEvent(); event != nil; event = sdl.PollEvent(){}
 
 Runes: "ᚠ" "ᚨ" "ᚰ" "ᚸ"
 
-    RElp := float64(f.Elapsed) / float64(f.Duration)
-    return (math.Pow((math.Sin(math.Pi*RElp/2)), 2) * (f.Max - f.Min)) / (f.Duration.Seconds() * FRAME_LATENCY_MS)
+KEY_ARROW_UP    = 1073741906 // KEY_ARROW_DOWN  = 1073741905
+KEY_ARROW_LEFT  = 1073741904 // KEY_ARROW_RIGHT = 1073741903
 
-Grid[px][py].Active = False
-CurrentPosition: 0,0 -> 1,0 -> 2,0 -> 3,0 -> 0, 0
-Grid[px][py].Active = True
+for event = sdl.PollEvent(); event != nil; event = sdl.PollEvent() {
+    switch t := event.(type) {
+        case *sdl.KeyDownEvent:
+
+func Ease(f *Fx) float64
+    x := float64(f.Elapsed) / float64(f.Duration)
+    y := (math.Pow((math.Sin(math.Pi * x / 2)), 2))
+    return f.Min + (y * (f.Max - f.Min))
 
 TODO
-    Create Window
     type RuneResource // LoadAll() // LoadRune()
     RuneInstance.Gfx.Resource // .Gfx.AnimaState
     Draw Grid -> need a entity
     Arrow Keys -> Walk Throught Grid
     Highlight Block
     SelectedRune -> Highlight
-    Animate Runes -> Slightly Increase and Decrease Size (Scale)
-        Which curve? sin/cos/tan etc.
-    Color Transition
-        From Orange to Blue. Which curve?
-
-
-
-
-
-
-
-
-
-
 ---
