@@ -2,6 +2,8 @@
 
 Runes: "ᚠ" "ᚨ" "ᚰ" "ᚸ"
 
+TODO Day 004 - Walk Through grid + SPACEBAR -> ToggleRune
+
 KEY_ARROW_UP    = 1073741906 // KEY_ARROW_DOWN  = 1073741905
 KEY_ARROW_LEFT  = 1073741904 // KEY_ARROW_RIGHT = 1073741903
 
@@ -14,11 +16,10 @@ func Ease(f *Fx) float64
     y := (math.Pow((math.Sin(math.Pi * x / 2)), 2))
     return f.Min + (y * (f.Max - f.Min))
 
+
+
 TODO
     type RuneResource // LoadAll() // LoadRune()
     RuneInstance.Gfx.Resource // .Gfx.AnimaState
-    Draw Grid -> need a entity
-    Arrow Keys -> Walk Throught Grid
-    Highlight Block
     SelectedRune -> Highlight
 ---
